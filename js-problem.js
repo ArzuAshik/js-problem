@@ -12,7 +12,6 @@ function rotateLeft(arrayLength, rotateAmount, arr){
             newArray.push(arr[i]);
         }
         if(i === rotate - 1){
-            // newArray.push(arr[i-1]);
             break;
         }
     }
