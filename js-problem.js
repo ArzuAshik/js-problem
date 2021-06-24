@@ -1,9 +1,11 @@
 function rotateLeft(arrayLength, rotateAmount, arr){
     let rotate = rotateAmount;
     if(rotateAmount > arrayLength){
-        rotate = rotateAmount - arrayLength;
+        rotate = rotateAmount % arrayLength;
     }
-    else if(arrayLength === rotateAmount) return arr;
+
+    if(rotate === 0) return arr;
+    
     const newArray = [];
     for(let i = rotate; i < arrayLength; i++){
         newArray.push(arr[i]);
@@ -18,7 +20,7 @@ function rotateLeft(arrayLength, rotateAmount, arr){
     return newArray;
 }
 
-const result = rotateLeft(5, 6, [1, 2, 3, 4, 5]);
+const result = rotateLeft(5, 511, [1, 2, 3, 4, 5]);
 
 console.log(result);
 
